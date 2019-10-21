@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "@emotion/styled";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled from '@emotion/styled'
 
 const NavbarMain = styled.div`
   width: 30%;
@@ -23,7 +23,7 @@ const NavbarMain = styled.div`
   :visited {
     color: hsl(128, 100%, 50%);
   }
-`;
+`
 
 const Menu = styled.div`
   > a {
@@ -33,17 +33,17 @@ const Menu = styled.div`
       text-decoration: underline;
     }
   }
-`;
+`
 
 export const Navbar: React.FC = () => (
   <NavbarMain>
-    <Link to="/">
+    <Link to='/'>
       <strong>Logo</strong>
     </Link>
     <Menu>
-      <Link to="/">Home</Link>
-      <Link to="/">Post</Link>
-      <Link to="/">Login</Link>
+      <Link to='/'>Home</Link>
+      <Link to='/'>Post</Link>
+      <Link to='/'>Login</Link>
     </Menu>
   </NavbarMain>
-);
+)

@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import { Index } from "./pages";
-import { GlobalStyle } from "./commons/globalStyle";
-import { Navbar } from "./commons/navbar";
-import { Container } from "./commons/container";
+import { Index } from './pages'
+import { GlobalStyle } from './commons/globalStyle'
+import { Navbar } from './commons/navbar'
+import { Container } from './commons/container'
 
 export const App: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ export const App: React.FC = () => {
         <Navbar />
 
         <Switch>
-          <Route path="/">
+          <Route path='/'>
             <Index />
           </Route>
         </Switch>
@@ -21,5 +21,5 @@ export const App: React.FC = () => {
 
       <GlobalStyle />
     </Router>
-  );
-};
+  )
+}

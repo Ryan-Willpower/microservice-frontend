@@ -1,5 +1,5 @@
-import React from "react";
-import { Global, css } from "@emotion/core";
+import React from 'react'
+import { Global, css } from '@emotion/core'
 
 const globalCSS = css`
   html,
@@ -9,6 +9,6 @@ const globalCSS = css`
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
   }
-`;
+`
 
-export const GlobalStyle = () => <Global styles={globalCSS} />;
+export const GlobalStyle = () => <Global styles={globalCSS} />
