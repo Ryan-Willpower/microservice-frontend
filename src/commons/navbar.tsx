@@ -8,6 +8,7 @@ const NavbarMain = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  margin-bottom: 20px;
 
   strong {
     font-size: 1.3rem;
