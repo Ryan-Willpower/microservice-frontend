@@ -6,6 +6,7 @@ import { Post } from '../pages/post'
 import { Login } from '../pages/login'
 import { ProtectedAddPost } from '../pages/addPost'
 import { Logout } from '../pages/logout'
+import { Register } from '../pages/register'
 
 export const RouteController: React.FC = () => {
   return (
@@ -25,6 +26,9 @@ export const RouteController: React.FC = () => {
         </Route>
         <Route path='/logout'>
           <Logout />
+        </Route>
+        <Route path='/register'>
+          <Register />
         </Route>
       </Switch>
     </>

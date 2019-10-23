@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 import { cookies } from '../utils/cookies'
 import { useLogin } from '../utils/login'
@@ -40,7 +40,9 @@ export const Login: React.FC = () => {
       >
         Login
       </button>
-      <p>Don't have account? register!</p>
+      <p>
+        Don't have account? <Link to='/register'>register!</Link>
+      </p>
     </div>
   )
 }
