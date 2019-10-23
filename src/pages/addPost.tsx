@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Redirect } from 'react-router-dom'
-import { getUserData } from '../utils/cookies'
-import { gql } from 'apollo-boost'
-import { useMutation } from '@apollo/react-hooks'
 
+import { getUserData } from '../utils/cookies'
 import { ContentEditor } from '../components/editor'
+import { useAddPost } from '../utils/addpost'
 
 const AddPostMain = styled.div`
   display: flex;
@@ -30,27 +29,7 @@ const AddPostMain = styled.div`
 `
 
 const AddPost: React.FC = () => {
-  const query = gql`
-    mutation AddPost($title: String!, $content: String!) {
-      addPost(title: $title, content: $content) {
-        isSuccess
-        description
-      }
-    }
-  `
-
-  const [editorState, setEditorState] = React.useState('')
-  const [title, setTitle] = React.useState('')
-  const [savePost, { data }] = useMutation(query)
-  console.log(data)
-  async function addPost() {
-    await savePost({
-      variables: {
-        title,
-        content: editorState,
-      },
-    })
-  }
+  const { editorState, setEditorState, setTitle, data, addPost } = useAddPost()
 
   if (data && data.addPost.isSuccess) {
     return <Redirect from='/add' to='/' />
