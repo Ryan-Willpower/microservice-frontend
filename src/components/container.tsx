@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-export const sizes = {
-  large: 1280,
-}
+import { sizes } from '../utils/constant'
 
 const ContainerBox = styled.div`
   width: ${sizes.large}px;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
 `
