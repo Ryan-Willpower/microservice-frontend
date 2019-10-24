@@ -16,8 +16,6 @@ export const Post: React.FC = () => {
   const data: findResult | null = useGetPost(postid)
   const { data: commentData, loading } = useComment(postid)
 
-  console.log(commentData)
-
   return (
     data && (
       <div>
