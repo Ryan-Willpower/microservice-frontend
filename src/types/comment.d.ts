@@ -1,9 +1,13 @@
 export interface UserComment {
   username: string
   message: string
-  datetime: number
+  date: string
 }
 
 export interface CommentObj {
   commentData: UserComment
+}
+
+export interface AllCommentResult {
+  allComment: UserComment[]
 }

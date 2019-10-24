@@ -5,12 +5,19 @@ import { useGetPost } from '../utils/getPost'
 import { findResult } from '../types/data'
 import { Comment } from '../components/comment'
 import { CommentInput } from '../components/commentInput'
+import { useComment } from '../utils/comment'
+import { keyGen } from '../utils/mapKeyGenerator'
 
-const datetime = Date.now()
+const date = Date.now().toLocaleString()
 
 export const Post: React.FC = () => {
   const { id } = useParams()
-  const data: findResult | null = useGetPost(Number(id))
+  const postid = Number(id)
+  const data: findResult | null = useGetPost(postid)
+  const { data: commentData, loading } = useComment(postid)
+
+  console.log(commentData)
+
   return (
     data && (
       <div>
@@ -19,10 +26,12 @@ export const Post: React.FC = () => {
         <div>{data.find.author}</div>
 
         <h1>Comment</h1>
-        {/* Mock data */}
-        <Comment
-          commentData={{ username: 'ryan', message: '1234', datetime }}
-        />
+        {loading && <div>loading some comment..</div>}
+        {commentData &&
+          commentData.allComment.length > 0 &&
+          commentData.allComment.map((comment, index) => (
+            <Comment commentData={comment} key={keyGen(index)} />
+          ))}
         <CommentInput />
       </div>
     )
