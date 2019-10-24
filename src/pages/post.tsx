@@ -25,12 +25,14 @@ export const Post: React.FC = () => {
 
         <h1>Comment</h1>
         {loading && <div>loading some comment..</div>}
-        {commentData &&
-          commentData.allComment.length > 0 &&
+        {commentData && commentData.allComment.length > 0 ? (
           commentData.allComment.map((comment, index) => (
             <Comment commentData={comment} key={keyGen(index)} />
-          ))}
-        <CommentInput />
+          ))
+        ) : (
+          <div>no comment yet</div>
+        )}
+        <CommentInput postid={postid} />
       </div>
     )
   )
