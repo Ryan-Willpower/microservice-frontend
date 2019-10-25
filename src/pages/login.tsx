@@ -32,7 +32,7 @@ export const Login: React.FC = () => {
     <div>
       {data && !data.login.isSuccess && <p>wrong username or password</p>}
       <input type='text' onChange={e => saveUsername(e)} />
-      <input type='text' onChange={e => savePasswd(e)} />
+      <input type='password' onChange={e => savePasswd(e)} />
       <button
         onClick={() =>
           login({
