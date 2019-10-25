@@ -8,8 +8,6 @@ import { CommentInput } from '../components/commentInput'
 import { useComment } from '../utils/comment'
 import { keyGen } from '../utils/mapKeyGenerator'
 
-const date = Date.now().toLocaleString()
-
 export const Post: React.FC = () => {
   const { id } = useParams()
   const postid = Number(id)

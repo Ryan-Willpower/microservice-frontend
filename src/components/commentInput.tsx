@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Redirect } from 'react-router-dom'
 
 import { Postid } from '../types/comment'
 import { useAddComment } from '../utils/addComment'
