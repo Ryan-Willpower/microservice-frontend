@@ -6,13 +6,16 @@ import { Post } from '../pages/post'
 import { Login } from '../pages/login'
 import { ProtectedAddPost } from '../pages/addPost'
 import { Register } from '../pages/register'
+import { ErrorBoundary } from './error'
 
 export const RouteController: React.FC = () => {
   return (
     <>
       <Switch>
         <Route exact path='/'>
-          <Index />
+          <ErrorBoundary>
+            <Index />
+          </ErrorBoundary>
         </Route>
         <Route path='/post/:id'>
           <Post />
