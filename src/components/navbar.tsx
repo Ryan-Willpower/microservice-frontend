@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 
 import { color, fontSize } from '../utils/constant'
 import { getUserData } from '../utils/cookies'
+import { logout } from '../utils/logout'
 
 const NavbarMain = styled.div`
   width: 30%;
@@ -52,7 +53,7 @@ export const Navbar: React.FC = () => {
         <Link to='/'>Home</Link>
         {userdata ? (
           <>
-            <Link to='/logout'>Logout</Link>
+            <div onClick={() => logout()}>Logout</div>
             <p>user: {userdata.username}</p>
           </>
         ) : (
