@@ -14,7 +14,7 @@ export function useRegister() {
 
   const [username, setUsername] = React.useState('')
   const [passwd, setPasswd] = React.useState('')
-  const [register, { data }] = useMutation(query)
+  const [register, { data, error }] = useMutation(query)
 
   return {
     username,
@@ -23,5 +23,6 @@ export function useRegister() {
     setPasswd,
     register,
     data,
+    error,
   }
 }

@@ -29,7 +29,9 @@ export const RouteController: React.FC = () => {
           <ProtectedAddPost />
         </Route>
         <Route path='/register'>
-          <Register />
+          <ErrorBoundary>
+            <Register />
+          </ErrorBoundary>
         </Route>
       </Switch>
     </>
