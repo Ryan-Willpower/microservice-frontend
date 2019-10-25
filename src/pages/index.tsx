@@ -18,7 +18,7 @@ export const Index = () => {
             <h1>Post</h1>
             <button>+ Add post</button>
           </PostHeader>
-          {data.getPosts.reverse().map((post, index) => (
+          {data.getPosts.map((post, index) => (
             <Post postData={post} key={keyGen(index)} />
           ))}
         </ErrorBoundary>
