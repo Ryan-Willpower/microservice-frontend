@@ -15,7 +15,7 @@ export function useLogin() {
 
   const [username, setUsername] = React.useState('')
   const [passwd, setPasswd] = React.useState('')
-  const [login, { loading, data }] = useLazyQuery(query)
+  const [login, { loading, data, error }] = useLazyQuery(query)
 
   function saveUsername(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.value === '') {
@@ -39,6 +39,7 @@ export function useLogin() {
     login,
     loading,
     data,
+    error,
     saveUsername,
     savePasswd,
   }

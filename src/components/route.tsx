@@ -21,7 +21,9 @@ export const RouteController: React.FC = () => {
           <Post />
         </Route>
         <Route path='/login'>
-          <Login />
+          <ErrorBoundary>
+            <Login />
+          </ErrorBoundary>
         </Route>
         <Route path='/add'>
           <ProtectedAddPost />

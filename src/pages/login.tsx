@@ -11,11 +11,16 @@ export const Login: React.FC = () => {
     login,
     loading,
     data,
+    error,
     saveUsername,
     savePasswd,
   } = useLogin()
 
   if (loading) return <p>Loging in...</p>
+
+  if (error) {
+    throw error
+  }
 
   if (data && data.login.isSuccess) {
     cookies.set('userdata', data.login.jwt)
